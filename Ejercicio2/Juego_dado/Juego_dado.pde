@@ -1,19 +1,25 @@
 private Dado[] dado;
 private int numeroArray;
 private int contador;
+private Tablero tablero;
 void setup(){
 size(400,400);
   numeroArray=4;
   contador =0;
   dado=new Dado[numeroArray];
+  tablero=new Tablero(new PVector(width/2,height/2));
 }
 void draw(){
+  tablero.display();
 for(int i=0; i<contador; i++){
- dado[i].display();
+  tablero.display();
+  tablero.setDado(dado[i]); 
+  dado[i].display();
+  tablero.mostrarNumero();
 }
 }
 void keyReleased(){
-  if(key=='1'){
+   if(key=='1'){
     if(contador<numeroArray){
       println("inicio");
       dado[contador]=new Dado(new PVector(width/2,height/2));
