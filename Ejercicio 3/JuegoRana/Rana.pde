@@ -22,11 +22,23 @@ public void setVelocidad(PVector vel){
 }
 
 void display(){
-  
+  imagen=loadImage("Rana.png");
+  imageMode(CENTER);
+  image(imagen,this.posicion.x,this.posicion.y,70,70);
 }
 
 public void movimiento(){
- 
+ if(key=='d'){
+  this.posicion.x+=this.velocidad.x;
+  }
+   if(key=='a'){
+  this.posicion.x-=this.velocidad.x;
+  }
+   if(key=='w'){
+  this.posicion.y-=this.velocidad.y;
+  }
+  if(key=='s'){
+  this.posicion.y+=this.velocidad.y;
+  }
 }
-
 }
